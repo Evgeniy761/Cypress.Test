@@ -71,6 +71,7 @@ describe('Проверкa на приведение к строчным букв
 
 
 
+
 describe('Оформление заказа на HuntingPony', function () {                                                      // Что проверяем
    it('Кладем 2 товара в корзину и оформляем', function () {                                                    // Какие действия   
         cy.visit('https://huntingpony.com/');                                                                   // Сайт проверки
@@ -93,9 +94,9 @@ describe('Оформление заказа на HuntingPony', function () {    
         cy.get('#shipping_address_street').type('Московская');
         cy.get('#shipping_address_house').type('77');
         cy.get('#shipping_address_flat').type('7');
-        cy.get('#shipping_address_flat').click();                                                                // Способ оплаты
-        cy.get('#shipping_address_flat').click();                                                                // Пол зверюги
-        }) 
+        cy.get('#order_comment').type('Довезите пожалуйста живым')                                               // Комментарий к заказу
+        cy.get('[for="order_payment_gateway_id_2976642"] > .co-payment_method-input > span').click();            // Способ оплаты                                                                                                           
+     })  
 
 
 })
